@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tiền cáp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label, input, select {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input, select {
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BÀI TẬP NỘP: TÍNH TIỀN CÁP</h1>
+        <form id="billingForm">
+            <label for="customerID">Mã khách hàng:</label>
+            <input type="text" id="customerID" required>
+
+            <label for="customerType">Loại khách hàng:</label>
+            <select id="customerType" required>
+                <option value="">-- Chọn loại khách hàng --</option>
+                <option value="residential">Nhà dân</option>
+                <option value="business">Doanh nghiệp</option>
+            </select>
+
+            <div id="connectionsDiv" class="hidden">
+                <label for="connections">Số kết nối:</label>
+                <input type="number" id="connections" min="0" value="0">
+            </div>
+            
+            <label for="premiumChannels">Số kênh cao cấp:</label>
+            <input type="number" id="premiumChannels" min="0" value="0">
+
+            <button type="submit">Tính tiền</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
